@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Responsive Desing</string>
+    <string name="title_activity_name">My Notes</string>
+    <string name="hind_email">Email</string>
+    <string name="hind_password">Password</string>
+    <string name="title_btn_activity">Entrar</string>
+    <string name="title_activity_notes">MainActivity</string>
+    <string name="title_note">Notas</string>
+    <string name="title_favorite">Favoritas</string>
+    <string name="title_account">Mi perfil</string>
+</resources>
