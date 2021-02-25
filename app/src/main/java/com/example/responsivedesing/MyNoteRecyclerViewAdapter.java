@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -33,8 +34,17 @@ public class MyNoteRecyclerViewAdapter extends RecyclerView.Adapter<MyNoteRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getTitle());
-        holder.mContentView.setText(mValues.get(position).getContent());
+        holder.titleLabel.setText(holder.mItem.getTitle());
+        holder.contentLabel.setText(holder.mItem.getContent());
+        if (holder.mItem.isFavorite()) {
+            holder.startFavoriteImg.setImageResource(R.drawable.ic_baseline_star);
+        }
+
+        holder.mView.setOnClickListener(v -> {
+            if (noteListener != null) {
+                noteListener.favoriteNoteClick(holder.mItem);
+            }
+        });
     }
 
     @Override
@@ -44,20 +54,17 @@ public class MyNoteRecyclerViewAdapter extends RecyclerView.Adapter<MyNoteRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
+        public final TextView titleLabel;
+        public final TextView contentLabel;
+        public final ImageView startFavoriteImg;
         public Note mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = view.findViewById(R.id.item_number);
-            mContentView = view.findViewById(R.id.content);
-        }
-
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            titleLabel = view.findViewById(R.id.fragment_item__label__title);
+            contentLabel = view.findViewById(R.id.fragment_item__label__title);
+            startFavoriteImg = view.findViewById(R.id.fragment_item__img__start_favorite);
         }
     }
 }
