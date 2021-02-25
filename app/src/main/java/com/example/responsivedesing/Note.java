@@ -4,13 +4,13 @@ public class Note {
 
     private String title;
     private String content;
-    private String favorite;
+    private boolean favorite;
     private int color;
 
-    public Note (String title, String content, String favorite, int color) {
+    public Note (String title, String content, boolean favorite, int color) {
         this.title = title;
         this.content = content;
-        this.favorite = favorite;
+        this.favorite= favorite;
         this.color = color;
     }
 
@@ -30,14 +30,6 @@ public class Note {
         this.content = content;
     }
 
-    public String getFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(String favorite) {
-        this.favorite = favorite;
-    }
-
     public int getColor() {
         return color;
     }
@@ -45,6 +37,13 @@ public class Note {
     public void setColor(int color) {
         this.color = color;
     }
-    
-  
+
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 }
