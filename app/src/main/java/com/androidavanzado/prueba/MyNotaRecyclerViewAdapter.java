@@ -1,9 +1,6 @@
 package com.androidavanzado.prueba;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.os.Build;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +12,10 @@ import java.util.List;
 
 public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Nota> mValues;
+    private final List<Note> mValues;
     private Context ctx;
 
-    public MyNotaRecyclerViewAdapter(List<Nota> items, Context ctx) {
+    public MyNotaRecyclerViewAdapter(List<Note> items, Context ctx) {
         mValues = items;
         this.ctx = ctx;
     }
@@ -33,14 +30,14 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.tvTitulo.setText(holder.mItem.getTitulo());
-        holder.tvContenido.setText(holder.mItem.getContenido());
+        holder.titleLabel.setText(holder.mItem.getTitle());
+        holder.contentLabel.setText(holder.mItem.getContent());
 
-        if(holder.mItem.isFavorita()) {
-            holder.ivFavorita.setImageResource(R.drawable.ic_star_black_24dp);
+        if(holder.mItem.isFavorite()) {
+            holder.favoriteImg.setImageResource(R.drawable.ic_star_black_24dp);
         }
 
-        holder.ivFavorita.setOnClickListener(new View.OnClickListener() {
+        holder.favoriteImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -55,22 +52,22 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView tvTitulo;
-        public final TextView tvContenido;
-        public final ImageView ivFavorita;
-        public Nota mItem;
+        public final TextView titleLabel;
+        public final TextView contentLabel;
+        public final ImageView favoriteImg;
+        public Note mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            tvTitulo = view.findViewById(R.id.textViewTitulo);
-            tvContenido = view.findViewById(R.id.textViewContenido);
-            ivFavorita = view.findViewById(R.id.imageViewFavorita);
+            titleLabel = view.findViewById(R.id.textViewTitulo);
+            contentLabel = view.findViewById(R.id.textViewContenido);
+            favoriteImg = view.findViewById(R.id.imageViewFavorita);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + tvTitulo.getText() + "'";
+            return super.toString() + " '" + titleLabel.getText() + "'";
         }
     }
 }

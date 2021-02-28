@@ -23,7 +23,6 @@ public class DashboardActivity extends AppCompatActivity {
                     f = new NotaFragment();
                     return true;
                 case R.id.navigation_dashboard:
-                    return true;
                 case R.id.navigation_notifications:
                     return true;
             }
