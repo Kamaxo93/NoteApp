@@ -1,103 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color"
+    android:background="@color/colorPrimary"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/activity_main__img__img_main"
-        android:layout_width="@dimen/dp90"
-        android:layout_height="@dimen/dp90"
-        android:layout_marginTop="@dimen/dp56"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_checklist"
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_checklist" />
 
     <TextView
-        android:id="@+id/activity_main__label__title_main"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp8"
-        android:text="@string/title_activity_name"
-        android:textSize="@dimen/sp30"
-        app:layout_constraintEnd_toEndOf="@id/activity_main__img__img_main"
-        app:layout_constraintStart_toStartOf="@id/activity_main__img__img_main"
-        app:layout_constraintTop_toBottomOf="@id/activity_main__img__img_main" />
-
-    <EditText
-        android:id="@+id/activity_main__input__email"
-        android:layout_width="@dimen/dp0"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp16"
-        android:layout_marginTop="@dimen/dp56"
-        android:layout_marginEnd="@dimen/dp16"
-        android:autofillHints="@string/hind_email"
-        android:hint="@string/hind_email"
-        android:inputType="textEmailAddress"
-        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="MyNotes"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_main__label__title_main" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/activity_main__input__password"
-        android:layout_width="@dimen/dp0"
+        android:id="@+id/editTextEmail"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp8"
-        android:autofillHints="@string/hind_password"
-        android:hint="@string/hind_password"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Contraseña"
         android:inputType="textPassword"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/activity_main__input__email"
-        app:layout_constraintStart_toStartOf="@id/activity_main__input__email"
-        app:layout_constraintTop_toBottomOf="@id/activity_main__input__email" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-        android:id="@+id/activity_main__btn__open"
-        android:layout_width="@dimen/dp0"
+        android:id="@+id/buttonLogin"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp8"
-        android:background="@color/primary_color_dark"
-        android:text="@string/title_btn_activity"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@id/activity_main__input__password"
-        app:layout_constraintStart_toStartOf="@id/activity_main__input__password"
-        app:layout_constraintTop_toBottomOf="@id/activity_main__input__password" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Entrar"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
-    <ImageView
-        android:id="@+id/activity_main__img__icon_instagram"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp32"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_baseline_camera"
-        app:layout_constraintEnd_toEndOf="@id/activity_main__btn__open"
-        app:layout_constraintStart_toStartOf="@id/activity_main__btn__open"
-        app:layout_constraintTop_toBottomOf="@id/activity_main__btn__open" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
 
-    <ImageView
-        android:id="@+id/activity_main__img__icon_facebook"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dp16"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_baseline_face"
-        app:layout_constraintEnd_toStartOf="@id/activity_main__img__icon_instagram"
-        app:layout_constraintTop_toTopOf="@id/activity_main__img__icon_instagram" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
 
     <ImageView
-        android:id="@+id/activity_main__img__icon_twitter"
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp16"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_baseline_feedback"
-        app:layout_constraintStart_toEndOf="@id/activity_main__img__icon_instagram"
-        app:layout_constraintTop_toTopOf="@id/activity_main__img__icon_instagram" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/ic_facebook_logo_button" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:srcCompat="@drawable/ic_social_instagram_circle" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/ic_twitter" />
+
+</android.support.constraint.ConstraintLayout>
