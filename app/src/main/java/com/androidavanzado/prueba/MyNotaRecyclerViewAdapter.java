@@ -12,10 +12,10 @@ import java.util.List;
 
 public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Note> mValues;
+    private final List<NoteEntity> mValues;
     private Context ctx;
 
-    public MyNotaRecyclerViewAdapter(List<Note> items, Context ctx) {
+    public MyNotaRecyclerViewAdapter(List<NoteEntity> items, Context ctx) {
         mValues = items;
         this.ctx = ctx;
     }
@@ -55,7 +55,7 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
         public final TextView titleLabel;
         public final TextView contentLabel;
         public final ImageView favoriteImg;
-        public Note mItem;
+        public NoteEntity mItem;
 
         public ViewHolder(View view) {
             super(view);
