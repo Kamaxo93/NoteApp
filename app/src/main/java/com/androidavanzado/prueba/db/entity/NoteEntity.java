@@ -1,4 +1,4 @@
-package com.androidavanzado.prueba;
+package com.androidavanzado.prueba.db.entity;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

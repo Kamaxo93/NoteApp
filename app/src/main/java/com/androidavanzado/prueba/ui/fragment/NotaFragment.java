@@ -1,4 +1,4 @@
-package com.androidavanzado.prueba;
+package com.androidavanzado.prueba.ui.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.androidavanzado.prueba.R;
+import com.androidavanzado.prueba.ui.adapter.MyNotaRecyclerViewAdapter;
+import com.androidavanzado.prueba.db.entity.NoteEntity;
 
 import java.util.ArrayList;
 import java.util.List;
