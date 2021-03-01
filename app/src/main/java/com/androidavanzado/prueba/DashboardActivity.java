@@ -26,8 +26,7 @@ public class DashboardActivity extends AppCompatActivity {
                 case R.id.navigation_notifications:
                     return true;
             }
-
-            if(f != null) {
+            if (f != null) {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contenedor, f)
