@@ -22,5 +22,7 @@
     <string name="text_switch_favorite">La nota es favorita</string>
     <!---->
 
+    <string name="name_new_note_menu">Nueva nota</string>
+
 
 </resources>

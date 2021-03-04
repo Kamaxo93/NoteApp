@@ -6,17 +6,22 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.androidavanzado.prueba.R;
 import com.androidavanzado.prueba.db.entity.NoteEntity;
 import com.androidavanzado.prueba.ui.adapter.MyNotaRecyclerViewAdapter;
+import com.androidavanzado.prueba.ui.dialogfragment.NewNoteDialogFragment;
 import com.androidavanzado.prueba.viewmodel.NewNoteDialogViewModel;
 
 import java.util.ArrayList;
@@ -55,6 +60,7 @@ public class NotaFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -97,5 +103,28 @@ public class NotaFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.options_menu_note_fragment, menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.add_new_note:
+                showDialogNewNote();
+                return true;
+            default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void showDialogNewNote() {
+        if (getActivity() != null) {
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            NewNoteDialogFragment newNoteDialogFragment = new NewNoteDialogFragment();
+            newNoteDialogFragment.show(fragmentManager, "New Note Dialog Fragment");
+
+        }
+    }
 }
