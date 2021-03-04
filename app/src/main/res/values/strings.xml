@@ -7,4 +7,22 @@
     <string name="title_notes">Notas</string>
     <string name="title_favoritas">Favoritas</string>
     <string name="title_user_profile">Mi perfil</string>
+
+    <!-- Dialog Fragment -->
+    <string name="title_dialog_new_note">Nueva Nota</string>
+    <string name="message_dialog_new_note">Introduzca los datos de la nueva nota</string>
+    <string name="label_bnt_positive_dialog_new_note">Guardar</string>
+    <string name="label_bnt_negative_dialog_new_note">Cancelar</string>
+    <string name="hint_title_dialog">Titulo</string>
+    <string name="hint_content_dialog">Contenido de la nota</string>
+    <string name="text_selection_color_note">Seleccione el color de la nota</string>
+    <string name="color_red_radio_button">Rojo</string>
+    <string name="color_grin_radio_button">Verde</string>
+    <string name="color_blue_radio_button">Azul</string>
+    <string name="text_switch_favorite">La nota es favorita</string>
+    <!---->
+
+    <string name="name_new_note_menu">Nueva nota</string>
+
+
 </resources>

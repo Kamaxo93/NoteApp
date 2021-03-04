@@ -1,4 +1,4 @@
-package com.androidavanzado.prueba;
+package com.androidavanzado.prueba.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,7 +6,9 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import com.androidavanzado.prueba.R;
+import com.androidavanzado.prueba.ui.fragment.NotaFragment;
 
 public class DashboardActivity extends AppCompatActivity {
 
