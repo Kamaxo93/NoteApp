@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.androidavanzado.prueba.db.entity.NoteEntity;
 import com.androidavanzado.prueba.R;
+import com.androidavanzado.prueba.db.entity.NoteEntity;
 
 import java.util.List;
 
 public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecyclerViewAdapter.ViewHolder> {
 
-    private final List<NoteEntity> mValues;
+    private List<NoteEntity> mValues;
     private Context ctx;
 
     public MyNotaRecyclerViewAdapter(List<NoteEntity> items, Context ctx) {
@@ -51,6 +51,11 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
     @Override
     public int getItemCount() {
         return mValues.size();
+    }
+
+    public void setNewNotes(List<NoteEntity> newNotes) {
+        this.mValues = newNotes;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
